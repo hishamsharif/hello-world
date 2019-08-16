@@ -6,18 +6,18 @@
 var handlers = {};
 
 // Hello handler
-handlers.hello = function(data, callback) {
+handlers.hello = function (data, callback) {
   // Callback a http status code, a payload object, flag to enable JSON response
   callback(406, { greeting: "Hello World" }, true);
 };
 
 // Ping handler
-handlers.ping = function(data, callback) {
+handlers.ping = function (data, callback) {
   callback(200);
 };
 
 // Not found handler
-handlers.notFound = function(data, callback) {
+handlers.notFound = function (data, callback) {
   callback(404);
 };
 
@@ -27,7 +27,7 @@ var router = {
   ping: handlers.ping
 };
 
-var handleRequest = function(data, callback) {
+var handleRequest = function (data, callback) {
   console.log("data", data);
   // Choose the handler this request should go to. If one is not found, use the notFound handler
   var choosenHandler =
